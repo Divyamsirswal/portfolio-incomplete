@@ -1,0 +1,167 @@
+.homeCanvas {
+  width: 100vw;
+  height: 100vh;
+  max-width: 100%;
+}
+
+.homeContainer {
+  background-color: white;
+  padding-top: 4vmax;
+  border-radius: 0 0 200px 200px;
+  border-bottom: 200px solid white;
+  position: relative;
+  z-index: 1;
+}
+
+.homeContainer > h3 {
+  text-align: center;
+  color: rgba(22, 20, 20, 0.904);
+  padding: 4vmax;
+}
+
+.homeSkills {
+  transform: translateY(-200px);
+  margin-bottom: -200px;
+  background-color: hsl(219, 48%, 8%);
+  height: 1500px;
+  position: relative;
+  padding: 300px;
+  box-sizing: border-box;
+  perspective: 450px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  overflow-x: hidden;
+}
+
+.homeSkills > h3 {
+  text-align: center;
+  color: white;
+  margin-bottom: 4vmax;
+  font-size: 4vmax;
+}
+
+.homeCubeSkills {
+  width: 200px;
+  height: 200px;
+  animation: cubeRotation 15s linear infinite alternate;
+  transform-style: preserve-3d;
+}
+
+.homeCubeSkillsFaces {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 10px rgb(0, 0, 0);
+  position: absolute;
+  width: inherit;
+  height: inherit;
+  opacity: 1;
+}
+.homeCubeSkillsFaces > img {
+  width: inherit;
+  height: inherit;
+}
+
+.home {
+  background: linear-gradient(to bottom, #000000, #0d0d0d);
+}
+
+.homeContainer,
+.homeSkills {
+  color: #000;
+  font-family: "Roboto", sans-serif;
+  letter-spacing: 1px;
+}
+
+.homeCubeSkillsFace1 {
+  transform: translate3d(0, 0, 120px);
+}
+.homeCubeSkillsFace2 {
+  transform: rotateY(180deg) translate3d(0, 0, 120px);
+}
+.homeCubeSkillsFace3 {
+  transform: rotateY(-90deg) translate3d(0, 0, 120px);
+}
+.homeCubeSkillsFace4 {
+  transform: rotateY(90deg) translate3d(0, 0, 120px);
+}
+.homeCubeSkillsFace5 {
+  transform: rotateX(90deg) translate3d(0, 0, 120px);
+}
+.homeCubeSkillsFace6 {
+  transform: rotateX(-90deg) translate3d(0, 0, 120px);
+}
+
+.cubeShadow {
+  width: 300px;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.171);
+  border-radius: 50%;
+  animation: cubeShadow 1s ease-in-out infinite alternate;
+  filter: blur(3px);
+}
+
+@keyframes cubeRotation {
+  to {
+    transform: rotateY(180deg) rotateX(480deg) rotateZ(720deg);
+  }
+}
+
+@keyframes cubeShadow {
+  to {
+    transform: scale(1.2) translateY(-10px);
+  }
+}
+
+.homeSkillsBox {
+  background-color: hsl(250, 100%, 75%);
+  padding: 0 2vmax;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  animation-duration: 1s;
+  right: 0;
+  animation-fill-mode: forwards;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+.homeSkillsBox > svg {
+  font-size: 5vmax;
+  color: rgb(255, 255, 255);
+  transition: all 0.5s;
+  margin: 10px;
+}
+
+.homeSkillsBox > svg:hover {
+  transform: scale(1.5);
+}
+
+.homeCubeSkills {
+  transition: transform 0.5s ease-in-out;
+}
+
+.homeCubeSkills:hover {
+  transform: rotateY(180deg);
+}
+
+
+@keyframes homeSkillsBoxAnimationOn {
+  from {
+    right: -300px;
+  }
+  to {
+    right: 40px;
+  }
+}
+
+@keyframes homeSkillsBoxAnimationOff {
+  from {
+    right: 40px;
+  }
+  to {
+    right: -300px;
+  }
+}
